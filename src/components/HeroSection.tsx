@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import ChineseTranslateButton from './ChineseTranslateButton';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -36,7 +37,7 @@ const slides: Slide[] = [
     src: '/images/hero-blossom.jpg',
     mobileSrc: '/images/hero-blossom-mobile.jpg',
     title: '',
-    subtitle: 'Your trusted partner in Sydney real estate since 2010',
+    subtitle: 'Your trusted partner in Sydney real estate, customer-centric throughout your property journey',
   },
 ];
 
@@ -293,7 +294,8 @@ export default function HeroSection() {
                   </svg>
                 </motion.a>
 
-
+                {/* Chinese translation button */}
+                <ChineseTranslateButton inline={true} />
               </motion.div>
             </motion.div>
           </motion.div>

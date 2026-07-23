@@ -11,7 +11,11 @@ declare global {
   }
 }
 
-export default function ChineseTranslateButton() {
+interface ChineseTranslateButtonProps {
+  inline?: boolean;
+}
+
+export default function ChineseTranslateButton({ inline = false }: ChineseTranslateButtonProps) {
   const [isTranslated, setIsTranslated] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -90,6 +94,51 @@ export default function ChineseTranslateButton() {
       translateToChinese();
     }
   };
+
+  if (inline) {
+    return (
+      <>
+        {/* Hidden Google Translate mount point */}
+        <div id="google_translate_element" className="hidden" aria-hidden="true" />
+
+        <motion.button
+          onClick={handleClick}
+          disabled={!isReady}
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.93 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          aria-label={isTranslated ? 'Switch to English' : '切换到中文 Switch to Chinese'}
+          className={`
+            flex items-center gap-2 rounded-full shadow-lg px-5 py-3 md:px-8 md:py-4
+            font-bold text-xs md:text-base transition-colors duration-200
+            disabled:opacity-40 disabled:cursor-wait shrink-0 border border-white/20
+            ${isTranslated
+              ? 'bg-white border-2 border-[#9B1B30] text-[#9B1B30] hover:bg-[#9B1B30] hover:text-white'
+              : 'bg-[#9B1B30] text-white hover:bg-[#7a1526]'
+            }
+          `}
+        >
+          {/* Chinese flag-inspired circle */}
+          <span
+            className={`flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-black flex-shrink-0 ${
+              isTranslated ? 'bg-[#9B1B30] text-white' : 'bg-red-700 text-yellow-300'
+            }`}
+            aria-hidden="true"
+          >
+            中
+          </span>
+
+          {isTranslated ? (
+            <span className="tracking-wide">English</span>
+          ) : (
+            <span className="tracking-wide">查看中文版</span>
+          )}
+        </motion.button>
+      </>
+    );
+  }
 
   return (
     <>

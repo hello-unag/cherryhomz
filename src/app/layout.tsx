@@ -4,7 +4,6 @@ import "./globals.css";
 
 import MobileTabBar from "@/components/MobileTabBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import ChineseTranslateButton from "@/components/ChineseTranslateButton";
 
 // Runs synchronously during HTML parsing (before first paint) so the saved
 // theme is applied without a flash of the default palette on reload.
@@ -67,7 +66,6 @@ export default function RootLayout({
 
         <MobileTabBar />
         <ThemeSwitcher />
-        <ChineseTranslateButton />
       </body>
     </html>
   );
