@@ -200,9 +200,9 @@ const Footer: FC = () => {
               <ul className="space-y-4">
                 {contactItems.map((item) => {
                   const inner = (
-                    <span className="flex items-start gap-3 text-sm text-muted transition-colors duration-300 group-hover:text-primary">
+                    <span className="flex items-start gap-3 text-xs sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
                       {item.icon}
-                      <span>{item.text}</span>
+                      <span className="break-all">{item.text}</span>
                     </span>
                   );
 
