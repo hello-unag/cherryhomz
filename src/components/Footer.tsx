@@ -165,9 +165,9 @@ const Footer: FC = () => {
               </span>
             </Link>
 
-            <p className="mt-2 text-sm font-medium italic text-blue-600">
+            <span className="mt-1.5 text-[10px] md:text-[11px] font-medium tracking-widest uppercase text-blue-600">
               Where Property Dreams Blossom
-            </p>
+            </span>
 
             <p className="mt-4 mx-auto max-w-xs text-sm leading-relaxed text-muted">
               Australia&apos;s premier real estate agency, helping you find the
