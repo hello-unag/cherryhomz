@@ -189,7 +189,7 @@ export default function HeroSection() {
                 alt={slide.title}
                 fill
                 priority={current === 0}
-                className="object-fill block md:hidden"
+                className="object-cover block md:hidden"
                 sizes="100vw"
                 quality={90}
               />
