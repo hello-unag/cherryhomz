@@ -105,7 +105,7 @@ const SocialButton: FC<{ href: string; label: string; children: React.ReactNode 
 );
 
 const FooterLinkColumn: FC<{ title: string; links: FooterLink[] }> = ({ title, links }) => (
-  <div>
+  <div className="text-center sm:text-left">
     <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
       {title}
     </h3>
@@ -153,12 +153,12 @@ const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-accent-soft" role="contentinfo">
+    <footer className="w-full bg-accent-soft border-t border-[rgba(155,27,48,0.05)]" role="contentinfo">
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 lg:px-20">
         {/* ---- Top Section: 3-column grid ---- */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {/* Column 1 – Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold tracking-tight text-primary">
                 CHERRY HOMZ
@@ -169,14 +169,14 @@ const Footer: FC = () => {
               Where Property Dreams Blossom
             </p>
 
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-4 mx-auto sm:mx-0 max-w-xs text-sm leading-relaxed text-muted">
               Australia&apos;s premier real estate agency, helping you find the
               perfect property to call home. Expert guidance from search to
               settlement.
             </p>
 
             {/* Social icons */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex items-center gap-3 justify-center sm:justify-start">
               <SocialButton href="" label="Facebook">
                 <FacebookIcon />
               </SocialButton>
@@ -196,14 +196,14 @@ const Footer: FC = () => {
           <FooterLinkColumn title="Quick Links" links={quickLinks} />
 
           {/* Column 4 – Contact Us */}
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
               Contact Us
             </h3>
             <ul className="space-y-4">
               {contactItems.map((item) => {
                 const inner = (
-                  <span className="flex items-start gap-3 text-sm text-muted transition-colors duration-300 group-hover:text-primary">
+                  <span className="flex items-start gap-3 text-sm text-muted transition-colors duration-300 group-hover:text-primary justify-center sm:justify-start">
                     {item.icon}
                     <span>{item.text}</span>
                   </span>
@@ -212,7 +212,7 @@ const Footer: FC = () => {
                 return (
                   <li key={item.text} className="group">
                     {item.href ? (
-                      <a href={item.href} className="group">
+                      <a href={item.href} className="inline-block group">
                         {inner}
                       </a>
                     ) : (
@@ -229,31 +229,29 @@ const Footer: FC = () => {
         <div className="my-8 border-t border-[rgba(155,27,48,0.1)]" />
 
         {/* ---- Bottom Bar ---- */}
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs text-muted">
-            &copy; {currentYear} Cherry Homz. All rights reserved.
-            <span className="mx-2 hidden sm:inline">|</span>
-            <span className="block sm:inline mt-1 sm:mt-0">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row text-center sm:text-left">
+          <div className="text-xs text-muted space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:flex-wrap">
+            <span>&copy; {currentYear} Cherry Homz. All rights reserved.</span>
+            <span className="hidden sm:inline mx-2 text-line-accent">|</span>
+            <span className="block sm:inline">
               Designed & Developed by{' '}
               <a
                 href="https://astrads.com.au"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium hover:text-primary transition-colors"
+                className="font-medium hover:text-primary transition-colors inline-block"
               >
                 Astra Digital Solutions
               </a>
             </span>
-          </p>
+          </div>
 
-          <div className="flex items-center gap-1 text-xs text-muted">
+          <div className="flex items-center gap-3 text-xs text-muted">
             {legalLinks.map((link, idx) => (
               <React.Fragment key={link.label}>
-                {idx > 0 && <span className="mx-1.5">|</span>}
+                {idx > 0 && <span className="text-line-accent">|</span>}
                 <Link
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="transition-colors duration-300 hover:text-primary"
                 >
                   {link.label}
