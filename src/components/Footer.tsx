@@ -184,12 +184,6 @@ const Footer: FC = () => {
               <SocialButton href="" label="Instagram">
                 <InstagramIcon />
               </SocialButton>
-              <SocialButton href="" label="X (Twitter)">
-                <TwitterIcon />
-              </SocialButton>
-              <SocialButton href="" label="LinkedIn">
-                <LinkedInIcon />
-              </SocialButton>
             </div>
           </div>
 
