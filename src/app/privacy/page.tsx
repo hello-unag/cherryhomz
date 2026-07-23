@@ -74,12 +74,12 @@ export default function PrivacyPage() {
 
             <h2 className="text-xl md:text-2xl font-bold text-ink mt-8 mb-4">7. Accessing and Correcting Your Information</h2>
             <p className="text-muted leading-relaxed mb-6">
-              You have a right to access and seek correction of the personal information we hold about you. If you would like to request access to or correct your details, please contact us at <a href="mailto:info@cherryshomz.com.au" className="text-primary hover:underline">info@cherryshomz.com.au</a>.
+              You have a right to access and seek correction of the personal information we hold about you. If you would like to request access to or correct your details, please contact us at <a href="mailto:info@cherryhomz.com.au" className="text-primary hover:underline">info@cherryhomz.com.au</a>.
             </p>
 
             <h2 className="text-xl md:text-2xl font-bold text-ink mt-8 mb-4">8. Complaints and Contact</h2>
             <p className="text-muted leading-relaxed mb-6">
-              If you have any questions or wish to lodge a complaint about a breach of the APPs, please contact us at <a href="mailto:info@cherryshomz.com.au" className="text-primary hover:underline">info@cherryshomz.com.au</a>. We will investigate your complaint promptly and respond in writing within 30 days.
+              If you have any questions or wish to lodge a complaint about a breach of the APPs, please contact us at <a href="mailto:info@cherryhomz.com.au" className="text-primary hover:underline">info@cherryhomz.com.au</a>. We will investigate your complaint promptly and respond in writing within 30 days.
             </p>
           </div>
         </div>

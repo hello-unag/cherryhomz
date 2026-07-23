@@ -341,13 +341,13 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
       </div>
       <div class="agent-contact">
         <div>📞 &nbsp;${property.agent.phone}</div>
-        <div>✉ &nbsp;info@cherryshomz.com.au</div>
+        <div>✉ &nbsp;info@cherryhomz.com.au</div>
       </div>
     </div>
   </div>` : ''}
 
   <div class="footer">
-    <p><strong>Cherry Homz</strong> &nbsp;|&nbsp; Where Property Dreams Blossom &nbsp;|&nbsp; info@cherryshomz.com.au</p>
+    <p><strong>Cherry Homz</strong> &nbsp;|&nbsp; Where Property Dreams Blossom &nbsp;|&nbsp; info@cherryhomz.com.au</p>
     <p>Generated on ${new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
   </div>
 </body>
@@ -960,7 +960,7 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                                 </svg>
                                 Call
                               </a>
-                              <a href="mailto:info@cherryshomz.com.au" className="flex-1 bg-card border-2 border-line hover:border-primary text-ink hover:text-primary font-bold py-3 rounded-xl transition-colors duration-300 text-center flex items-center justify-center gap-2">
+                              <a href="mailto:info@cherryhomz.com.au" className="flex-1 bg-card border-2 border-line hover:border-primary text-ink hover:text-primary font-bold py-3 rounded-xl transition-colors duration-300 text-center flex items-center justify-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
