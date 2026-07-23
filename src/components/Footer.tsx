@@ -158,7 +158,7 @@ const Footer: FC = () => {
         {/* ---- Top Section: 3-column grid ---- */}
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {/* Column 1 – Brand */}
-          <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
+          <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center text-center">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold tracking-tight text-primary">
                 CHERRY HOMZ
@@ -169,14 +169,14 @@ const Footer: FC = () => {
               Where Property Dreams Blossom
             </p>
 
-            <p className="mt-4 mx-auto sm:mx-0 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-4 mx-auto max-w-xs text-sm leading-relaxed text-muted">
               Australia&apos;s premier real estate agency, helping you find the
               perfect property to call home. Expert guidance from search to
               settlement.
             </p>
 
             {/* Social icons */}
-            <div className="mt-6 flex items-center gap-3 justify-center sm:justify-start">
+            <div className="mt-6 flex items-center gap-3 justify-center">
               <SocialButton href="" label="Facebook">
                 <FacebookIcon />
               </SocialButton>
