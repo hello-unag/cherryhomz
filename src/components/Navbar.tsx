@@ -272,7 +272,7 @@ export default function Navbar() {
                     Where Property Dreams Blossom
                   </p>
                   <p className="mt-1 text-xs" style={{ color: 'var(--primary)' }}>
-                    info@cherryhomz.com.au
+                    info@cherryshomz.com.au
                   </p>
                 </div>
               </div>

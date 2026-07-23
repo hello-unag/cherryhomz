@@ -347,7 +347,7 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
   </div>` : ''}
 
   <div class="footer">
-    <p><strong>Cherry Homz</strong> &nbsp;|&nbsp; Where Property Dreams Blossom &nbsp;|&nbsp; info@cherryhomz.com.au</p>
+    <p><strong>Cherry Homz</strong> &nbsp;|&nbsp; Where Property Dreams Blossom &nbsp;|&nbsp; info@cherryshomz.com.au</p>
     <p>Generated on ${new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
   </div>
 </body>

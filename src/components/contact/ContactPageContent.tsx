@@ -120,8 +120,8 @@ export default function ContactPageContent() {
             },
             {
               label: 'Email',
-              sub: 'info@cherryhomz.com.au',
-              href: 'mailto:info@cherryhomz.com.au',
+              sub: 'info@cherryshomz.com.au',
+              href: 'mailto:info@cherryshomz.com.au',
               icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -318,7 +318,7 @@ export default function ContactPageContent() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth={1.8} className="h-4.5 w-4.5 shrink-0">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
-                    <a href="mailto:info@cherryhomz.com.au" className="transition-colors hover:text-primary">info@cherryhomz.com.au</a>
+                    <a href="mailto:info@cherryshomz.com.au" className="transition-colors hover:text-primary">info@cherryshomz.com.au</a>
                   </p>
                 </address>
 

@@ -73,7 +73,7 @@ export default function TermsPage() {
 
             <h2 className="text-xl md:text-2xl font-bold text-ink mt-8 mb-4">9. Contact Us</h2>
             <p className="text-muted leading-relaxed mb-6">
-              If you have any questions regarding these Terms of Service, please contact us at <a href="mailto:info@cherryhomz.com.au" className="text-primary hover:underline">info@cherryhomz.com.au</a>.
+              If you have any questions regarding these Terms of Service, please contact us at <a href="mailto:info@cherryshomz.com.au" className="text-primary hover:underline">info@cherryshomz.com.au</a>.
             </p>
           </div>
         </div>

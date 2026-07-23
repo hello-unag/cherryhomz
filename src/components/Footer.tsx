@@ -136,8 +136,8 @@ const contactItems: ContactItem[] = [
   },
   {
     icon: <EmailIcon />,
-    text: 'info@cherryhomz.com.au',
-    href: 'mailto:info@cherryhomz.com.au',
+    text: 'info@cherryshomz.com.au',
+    href: 'mailto:info@cherryshomz.com.au',
   },
   {
     icon: <MapPinIcon />,
