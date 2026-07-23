@@ -264,7 +264,7 @@ export const properties: Property[] = [
       "Land registration: End 2025",
       "Built by Noble Home Builders (iCIRT 5-star certified)",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
@@ -423,7 +423,7 @@ export const properties: Property[] = [
       "4000L Water Tank & 15-Year Structural Warranty",
       "Land Registration Date: End 2025",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
@@ -462,7 +462,7 @@ export const properties: Property[] = [
       "Gourmet kitchen with modern appliances",
       "Landscaped front yard & concrete driveway",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
@@ -505,7 +505,7 @@ export const properties: Property[] = [
       "Double lock-up garage with driveway",
       "Landscaped gardens & stone pathway",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
@@ -618,7 +618,7 @@ export const properties: Property[] = [
       "Double Lock-up Garage & Driveway",
       "Don't Miss This Opportunity #SYDNEYPROPERTY",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
@@ -736,7 +736,7 @@ export const properties: Property[] = [
       "4000L Water Tank & 15-Year Structural Warranty",
       "Land Registration Date: Q2 2026",
     ],
-    inspectionTimes: ["Contact us to arrange a private inspection"],
+    inspectionTimes: ["Contact us"],
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
