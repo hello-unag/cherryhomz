@@ -42,15 +42,18 @@ export default function CTABanner() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             {/* Primary CTA */}
-            <Link href="/contact" passHref legacyBehavior>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-hover cursor-pointer"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto"
+            >
+              <Link
+                href="/contact"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-hover cursor-pointer"
               >
                 Get Started Today
-              </motion.a>
-            </Link>
+              </Link>
+            </motion.div>
 
             {/* Secondary CTA */}
             <motion.a
