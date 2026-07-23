@@ -141,7 +141,7 @@ const contactItems: ContactItem[] = [
   },
   {
     icon: <MapPinIcon />,
-    text: 'Level 8, 300 George Street, Sydney NSW 2000',
+    text: 'Level 8, 300 George Street,\nSydney NSW 2000',
   },
 ];
 
@@ -200,10 +200,13 @@ const Footer: FC = () => {
               <ul className="space-y-4">
                 {contactItems.map((item) => {
                   const isEmail = item.text.includes('@');
+                  const isAddress = item.text.includes('\n');
                   const inner = (
                     <span className="flex items-start gap-3 text-xs sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
                       {item.icon}
-                      <span className={isEmail ? 'whitespace-nowrap' : 'break-all'}>{item.text}</span>
+                      <span className={`${isEmail ? 'whitespace-nowrap' : ''} ${isAddress ? 'whitespace-pre-line leading-relaxed' : 'break-all'}`}>
+                        {item.text}
+                      </span>
                     </span>
                   );
 
