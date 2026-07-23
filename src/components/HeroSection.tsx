@@ -31,7 +31,7 @@ const slides: Slide[] = [
     src: '/images/hero-apartments.png',
     title: 'Luxury Apartment Living',
     subtitle:
-      "Experience world-class high-rise living in Australia's premier cities",
+      "Experience world-class high-rise living in Sydney's premier locations",
   },
   {
     src: '/images/hero-blossom.jpg',
