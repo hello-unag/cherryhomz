@@ -224,7 +224,7 @@ export default function HeroSection() {
       {/* ============================================================ */}
       {/*  Left-aligned text overlay                                   */}
       {/* ============================================================ */}
-      <div className="absolute inset-0 z-20 flex items-end justify-start pl-0 pr-6 pb-32 md:pr-16 lg:pr-24 lg:pb-24">
+      <div className="absolute inset-0 z-20 flex items-end justify-start pl-6 md:pl-12 lg:pl-20 pr-6 pb-32 lg:pb-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
