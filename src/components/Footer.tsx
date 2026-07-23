@@ -233,7 +233,7 @@ const Footer: FC = () => {
           <div className="text-xs text-muted space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:flex-wrap">
             <span>&copy; {currentYear} Cherry Homz. All rights reserved.</span>
             <span className="hidden sm:inline mx-2 text-line-accent">|</span>
-            <span className="block sm:inline">
+            <span className="block mt-2.5 sm:mt-0">
               Designed & Developed by{' '}
               <a
                 href="https://astrads.com.au"
