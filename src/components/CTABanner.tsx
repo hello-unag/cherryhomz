@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 /* ------------------------------------------------------------------ */
 /*  CTA Banner                                                         */
@@ -41,14 +42,15 @@ export default function CTABanner() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             {/* Primary CTA */}
-            <motion.a
-              href="#get-started"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-hover"
-            >
-              Get Started Today
-            </motion.a>
+            <Link href="/contact" passHref legacyBehavior>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-hover cursor-pointer"
+              >
+                Get Started Today
+              </motion.a>
+            </Link>
 
             {/* Secondary CTA */}
             <motion.a
