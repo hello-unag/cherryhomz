@@ -227,7 +227,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.7069, lng: 150.8344 },
@@ -268,7 +268,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.6761, lng: 150.8770 },
@@ -303,7 +303,7 @@ export const properties: Property[] = [
     agent: {
       name: "Oliver Bennett",
       photo: "/images/team-oliver-bennett.png?v=2",
-      phone: "+61 400 777 888",
+      phone: "+61 470 593 442",
       email: "oliver@cherryshomz.com.au",
     },
     coordinates: { lat: -33.8847, lng: 151.2265 },
@@ -342,7 +342,7 @@ export const properties: Property[] = [
     agent: {
       name: "Grace Taylor",
       photo: "/images/team-grace-taylor.png?v=2",
-      phone: "+61 400 999 000",
+      phone: "+61 470 593 442",
       email: "grace@cherryshomz.com.au",
     },
     coordinates: { lat: -37.8388, lng: 144.9923 },
@@ -378,7 +378,7 @@ export const properties: Property[] = [
     agent: {
       name: "Sophie Nguyen",
       photo: "/images/team-sophie-nguyen.png?v=2",
-      phone: "+61 400 111 222",
+      phone: "+61 470 593 442",
       email: "sophie@cherryshomz.com.au",
     },
     coordinates: { lat: -33.7095, lng: 150.9551 },
@@ -427,7 +427,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.6761, lng: 150.8770 },
@@ -466,7 +466,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.7069, lng: 150.8344 },
@@ -509,7 +509,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.9194, lng: 150.8234 },
@@ -545,7 +545,7 @@ export const properties: Property[] = [
     agent: {
       name: "Oliver Bennett",
       photo: "/images/team-oliver-bennett.png?v=2",
-      phone: "+61 400 777 888",
+      phone: "+61 470 593 442",
       email: "oliver@cherryshomz.com.au",
     },
     coordinates: { lat: -26.3881, lng: 153.0909 },
@@ -581,7 +581,7 @@ export const properties: Property[] = [
     agent: {
       name: "Grace Taylor",
       photo: "/images/team-grace-taylor.png?v=2",
-      phone: "+61 400 999 000",
+      phone: "+61 470 593 442",
       email: "grace@cherryshomz.com.au",
     },
     coordinates: { lat: -27.8236, lng: 153.2946 },
@@ -622,7 +622,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -34.1189, lng: 150.7397 },
@@ -658,7 +658,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -31.9927, lng: 115.7533 },
@@ -694,7 +694,7 @@ export const properties: Property[] = [
     agent: {
       name: "Daniel Rossi",
       photo: "/images/team-daniel-rossi.png?v=2",
-      phone: "+61 400 333 444",
+      phone: "+61 470 593 442",
       email: "daniel@cherryshomz.com.au",
     },
     coordinates: { lat: -37.8411, lng: 145.0098 },
@@ -740,7 +740,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -34.0016, lng: 150.7383 },
@@ -776,7 +776,7 @@ export const properties: Property[] = [
     agent: {
       name: "Aisha Khan",
       photo: "/images/team-aisha-khan.png?v=2",
-      phone: "+61 400 555 666",
+      phone: "+61 470 593 442",
       email: "aisha@cherryshomz.com.au",
     },
     coordinates: { lat: -33.8908, lng: 151.2743 },
@@ -812,7 +812,7 @@ export const properties: Property[] = [
     agent: {
       name: "Oliver Bennett",
       photo: "/images/team-oliver-bennett.png?v=2",
-      phone: "+61 400 777 888",
+      phone: "+61 470 593 442",
       email: "oliver@cherryshomz.com.au",
     },
     coordinates: { lat: -33.8136, lng: 151.0034 },
@@ -848,7 +848,7 @@ export const properties: Property[] = [
     agent: {
       name: "Grace Taylor",
       photo: "/images/team-grace-taylor.png?v=2",
-      phone: "+61 400 999 000",
+      phone: "+61 470 593 442",
       email: "grace@cherryshomz.com.au",
     },
     coordinates: { lat: -33.8983, lng: 151.1785 },
@@ -884,7 +884,7 @@ export const properties: Property[] = [
     agent: {
       name: "Sophie Nguyen",
       photo: "/images/team-sophie-nguyen.png?v=2",
-      phone: "+61 400 111 222",
+      phone: "+61 470 593 442",
       email: "sophie@cherryshomz.com.au",
     },
     coordinates: { lat: -33.7969, lng: 151.1801 },
@@ -920,7 +920,7 @@ export const properties: Property[] = [
     agent: {
       name: "Marcus Sterling",
       photo: "/images/agent_photo_1783129600216.png",
-      phone: "+61 412 345 678",
+      phone: "+61 470 593 442",
       email: "marcus@cherryshomz.com.au",
     },
     coordinates: { lat: -33.6459, lng: 150.8993 },
