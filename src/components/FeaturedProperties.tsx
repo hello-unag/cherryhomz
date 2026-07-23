@@ -11,11 +11,7 @@ export default function FeaturedProperties() {
   const [activeTab, setActiveTab] = useState<TabType>('buy');
 
   const tabs: { id: TabType; label: string; disabled?: boolean }[] = [
-    { id: 'all', label: 'All Properties', disabled: true },
     { id: 'buy', label: 'For Sale' },
-    { id: 'rent', label: 'For Rent', disabled: true },
-    { id: 'sold', label: 'Sold', disabled: true },
-    { id: 'land', label: 'Land', disabled: true },
   ];
 
   const filteredProperties = properties
