@@ -105,7 +105,7 @@ const SocialButton: FC<{ href: string; label: string; children: React.ReactNode 
 );
 
 const FooterLinkColumn: FC<{ title: string; links: FooterLink[] }> = ({ title, links }) => (
-  <div className="text-center sm:text-left">
+  <div className="text-left">
     <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
       {title}
     </h3>
@@ -155,10 +155,11 @@ const Footer: FC = () => {
   return (
     <footer className="w-full bg-accent-soft border-t border-[rgba(155,27,48,0.05)]" role="contentinfo">
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 lg:px-20">
-        {/* ---- Top Section: 3-column grid ---- */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        {/* ---- Top Section: Responsive Layout ---- */}
+        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8">
+          
           {/* Column 1 – Brand */}
-          <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:max-w-sm shrink-0">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold tracking-tight text-primary">
                 CHERRY HOMZ
@@ -169,14 +170,14 @@ const Footer: FC = () => {
               Where Property Dreams Blossom
             </span>
 
-            <p className="mt-4 mx-auto max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-4 mx-auto lg:mx-0 max-w-xs text-sm leading-relaxed text-muted">
               Australia&apos;s premier real estate agency, helping you find the
               perfect property to call home. Expert guidance from search to
               settlement.
             </p>
 
             {/* Social icons */}
-            <div className="mt-6 flex items-center gap-3 justify-center">
+            <div className="mt-6 flex items-center gap-3 justify-center lg:justify-start">
               <SocialButton href="" label="Facebook">
                 <FacebookIcon />
               </SocialButton>
@@ -192,36 +193,39 @@ const Footer: FC = () => {
             </div>
           </div>
 
-          {/* Column 2 – Quick Links */}
-          <FooterLinkColumn title="Quick Links" links={quickLinks} />
+          {/* Columns 2 & 3 – Links and Contact (Side-by-side) */}
+          <div className="grid grid-cols-2 gap-8 sm:gap-16 lg:gap-20">
+            {/* Column 2 – Quick Links */}
+            <FooterLinkColumn title="Quick Links" links={quickLinks} />
 
-          {/* Column 4 – Contact Us */}
-          <div className="text-center sm:text-left">
-            <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              {contactItems.map((item) => {
-                const inner = (
-                  <span className="flex items-start gap-3 text-sm text-muted transition-colors duration-300 group-hover:text-primary justify-center sm:justify-start">
-                    {item.icon}
-                    <span>{item.text}</span>
-                  </span>
-                );
+            {/* Column 3 – Contact Us */}
+            <div className="text-left">
+              <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
+                Contact Us
+              </h3>
+              <ul className="space-y-4">
+                {contactItems.map((item) => {
+                  const inner = (
+                    <span className="flex items-start gap-3 text-sm text-muted transition-colors duration-300 group-hover:text-primary">
+                      {item.icon}
+                      <span>{item.text}</span>
+                    </span>
+                  );
 
-                return (
-                  <li key={item.text} className="group">
-                    {item.href ? (
-                      <a href={item.href} className="inline-block group">
-                        {inner}
-                      </a>
-                    ) : (
-                      inner
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={item.text} className="group">
+                      {item.href ? (
+                        <a href={item.href} className="inline-block group">
+                          {inner}
+                        </a>
+                      ) : (
+                        inner
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
 
