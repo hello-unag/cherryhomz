@@ -247,10 +247,10 @@ export const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 2,
     carSpaces: 1,
-    image: "/images/prop-box-hill.jpg?v=4",
-    imageObjectPosition: "top",
+    image: "/images/prop-box-hill.jpg?v=5",
+    imageObjectPosition: "center",
     gallery: [
-      "/images/prop-box-hill.jpg?v=4",
+      "/images/prop-box-hill.jpg?v=5",
     ],
     category: "buy",
     type: "house",
