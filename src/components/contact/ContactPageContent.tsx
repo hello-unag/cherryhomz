@@ -360,8 +360,7 @@ export default function ContactPageContent() {
                 <PropertyMap lat={-33.8688} lng={151.2093} />
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-ink">Sydney Head Office</h3>
-                <address className="mt-3 space-y-3 text-sm not-italic leading-relaxed text-muted">
+                <address className="space-y-3 text-sm not-italic leading-relaxed text-muted">
                   <p className="flex items-start gap-2.5">
                     <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth={1.8} className="mt-0.5 h-4.5 w-4.5 shrink-0">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
