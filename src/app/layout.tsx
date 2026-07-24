@@ -50,6 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="cherry"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${inter.variable} h-full antialiased`}
     >
