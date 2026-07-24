@@ -21,7 +21,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, stats }: Pag
     <section className="relative overflow-hidden bg-night">
       {/* Background image + overlay */}
       <div className="absolute inset-0">
-        <Image src={image} alt="" fill priority className="object-cover opacity-70" sizes="100vw" />
+        <Image src={image} alt="" fill priority className="object-cover opacity-70" sizes="100vw" quality={80} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
       </div>

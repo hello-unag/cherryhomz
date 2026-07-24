@@ -392,6 +392,8 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
               alt={`${property.title} - view ${currentImageIdx + 1}`}
               fill
               draggable={false}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={75}
               className={`${
                 property.imageObjectFit === 'contain'
                   ? 'object-contain'
@@ -607,12 +609,14 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                           />
                         ) : (
                           <Image
-                            src={images[currentImageIdx]}
-                            alt={`${property.title} - view ${currentImageIdx + 1}`}
-                            fill
-                            draggable={false}
-                            className="object-cover"
-                          />
+                             src={images[currentImageIdx]}
+                             alt={`${property.title} - view ${currentImageIdx + 1}`}
+                             fill
+                             draggable={false}
+                             sizes="(max-width: 768px) 90vw, 60vw"
+                             quality={75}
+                             className="object-cover"
+                           />
                         )}
                       </motion.div>
                     </AnimatePresence>
@@ -1033,6 +1037,8 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                     src={images[currentImageIdx]} 
                     alt={`${property.title} - fullscreen ${currentImageIdx + 1}`} 
                     fill 
+                    sizes="100vw"
+                    quality={75}
                     className="object-contain pointer-events-none"
                     draggable={false}
                   />

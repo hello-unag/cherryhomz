@@ -182,7 +182,7 @@ export default function HeroSection() {
                 priority={current === 0}
                 className="object-cover hidden md:block"
                 sizes="100vw"
-                quality={90}
+                quality={80}
               />
               {/* Mobile Image */}
               <Image
@@ -192,7 +192,7 @@ export default function HeroSection() {
                 priority={current === 0}
                 className="object-cover block md:hidden"
                 sizes="100vw"
-                quality={90}
+                quality={80}
               />
             </>
           ) : (
@@ -203,7 +203,7 @@ export default function HeroSection() {
               priority={current === 0}
               className="object-cover"
               sizes="100vw"
-              quality={90}
+              quality={80}
             />
           )}
         </motion.div>
