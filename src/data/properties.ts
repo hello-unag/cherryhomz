@@ -17,6 +17,7 @@ export interface Property {
   carSpaces: number;
   area?: number; // sqm – omit when not available
   imageObjectFit?: 'cover' | 'contain';
+  imageObjectPosition?: string;
   image: string;
   gallery?: string[];
   floorplan?: string;
@@ -247,6 +248,7 @@ export const properties: Property[] = [
     bathrooms: 2,
     carSpaces: 1,
     image: "/images/prop-box-hill.jpg?v=4",
+    imageObjectPosition: "top",
     gallery: [
       "/images/prop-box-hill.jpg?v=4",
     ],

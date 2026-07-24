@@ -396,8 +396,9 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
               className={`${
                 property.imageObjectFit === 'contain'
                   ? 'object-contain'
-                  : 'object-cover object-top group-hover:scale-105'
+                  : 'object-cover group-hover:scale-105'
               } transition-transform duration-500`}
+              style={{ objectPosition: property.imageObjectPosition || 'center' }}
             />
           </motion.div>
         </AnimatePresence>
@@ -614,7 +615,8 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                              draggable={false}
                              sizes="(max-width: 768px) 90vw, 60vw"
                              quality={75}
-                             className="object-cover object-top"
+                             className="object-cover"
+                             style={{ objectPosition: property.imageObjectPosition || 'center' }}
                            />
                         )}
                       </motion.div>
