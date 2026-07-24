@@ -324,10 +324,9 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
   ${property.inspectionTimes ? `
   <div class="section">
     <h2>${headInspection}</h2>
-    <table>
-      <thead><tr><th>${labelDay}</th><th>${labelDate}</th><th>${labelTime}</th></tr></thead>
-      <tbody>${inspectionHTML}</tbody>
-    </table>
+    <div style="font-size: 14px; font-weight: bold; color: #801b30; background: #fbf6f7; border: 1.5px solid #f3e6e8; padding: 12px; border-radius: 8px; text-align: center;">
+      Contact Us for Inspection
+    </div>
   </div>` : ''}
 
   ${property.agent ? `
@@ -886,35 +885,14 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                               </svg>
                               Inspection Times
                             </h4>
-                            <div className="overflow-hidden rounded-xl border border-line shadow-sm">
-                              <table className="w-full text-left text-sm">
-                                <thead className="bg-primary text-white">
-                                  <tr>
-                                    <th className="px-4 py-3 font-semibold">Day</th>
-                                    <th className="px-4 py-3 font-semibold">Date</th>
-                                    <th className="px-4 py-3 font-semibold">Time</th>
-                                  </tr>
-                                </thead>
-                                <tbody className="divide-y divide-line">
-                                  {property.inspectionTimes.map((timeString, idx) => {
-                                    const parts = timeString.split(" - ");
-                                    const fullDate = parts[0];
-                                    const timePart = parts.length > 1 ? parts[1] : "";
-                                    
-                                    const dateSplit = fullDate.split(", ");
-                                    const dayPart = dateSplit.length > 1 ? dateSplit[0].substring(0, 3) : "";
-                                    const datePart = dateSplit.length > 1 ? dateSplit[1] : fullDate;
-
-                                    return (
-                                      <tr key={idx} className={idx % 2 === 0 ? "bg-card" : "bg-accent-soft"}>
-                                        <td className="px-4 py-3.5 font-bold text-primary border-r border-line whitespace-nowrap">{dayPart}</td>
-                                        <td className="px-4 py-3.5 font-bold text-ink border-r border-line whitespace-nowrap">{datePart}</td>
-                                        <td className="px-4 py-3.5 text-muted font-medium">{timePart}</td>
-                                      </tr>
-                                    );
-                                  })}
-                                </tbody>
-                              </table>
+                            <div className="p-4 bg-accent-soft rounded-xl border border-line text-ink font-semibold flex items-center justify-between">
+                              <span className="text-sm">Contact Us</span>
+                              <a 
+                                href="/contact" 
+                                className="px-4 py-2 bg-primary hover:bg-primary/95 text-white text-xs font-bold rounded-lg transition-colors shadow-sm"
+                              >
+                                Contact Us
+                              </a>
                             </div>
                           </div>
                         )}
