@@ -614,7 +614,7 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                              draggable={false}
                              sizes="(max-width: 768px) 90vw, 60vw"
                              quality={75}
-                             className="object-cover"
+                             className="object-cover object-top"
                            />
                         )}
                       </motion.div>
