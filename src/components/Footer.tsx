@@ -188,7 +188,7 @@ const Footer: FC = () => {
           </div>
 
           {/* Columns 2 & 3 – Links and Contact (Side-by-side) */}
-          <div className="grid grid-cols-[auto_1fr] sm:grid-cols-2 gap-4 sm:gap-16 lg:gap-20">
+          <div className="grid grid-cols-[115px_1fr] sm:grid-cols-2 gap-4 sm:gap-16 lg:gap-20">
             {/* Column 2 – Quick Links */}
             <FooterLinkColumn title="Quick Links" links={quickLinks} />
 
@@ -199,10 +199,11 @@ const Footer: FC = () => {
               </h3>
               <ul className="space-y-4">
                 {contactItems.map((item) => {
+                  const isEmail = item.text.includes('@');
                   const inner = (
-                    <span className="flex items-start gap-2 text-[11px] sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
+                    <span className="flex items-start gap-2 text-[11.5px] sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
                       {item.icon}
-                      <span className="whitespace-nowrap">{item.text}</span>
+                      <span className={isEmail ? 'whitespace-nowrap' : 'break-words'}>{item.text}</span>
                     </span>
                   );
 
