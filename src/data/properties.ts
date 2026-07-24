@@ -255,7 +255,7 @@ export const properties: Property[] = [
     category: "buy",
     type: "house",
     description:
-      "A brand-new dual-living house and land package in Box Hill — one of Sydney's Northwest high-growth corridors. Built by Noble Home Builders (iCIRT 5-star certified), this property offers an outstanding rental return of up to 5.5%, is within walking distance to the future Town Centre, and comes with a guaranteed tenant on settlement plus 1 year of free property management. Land registration is scheduled for End 2025. Limited stock available — contact us now to secure your lot. $15K rebate available for a limited time.",
+      "A brand-new dual-living house and land package in Box Hill — one of Sydney's Northwest high-growth corridors. Built to high standards (iCIRT 5-star certified), this property offers an outstanding rental return of up to 5.5%, is within walking distance to the future Town Centre, and comes with a guaranteed tenant on settlement plus 1 year of free property management. Land registration is scheduled for End 2025. Limited stock available — contact us now to secure your lot. $15K rebate available for a limited time.",
     features: [
       "New dual-living design",
       "High rental return up to 5.5%",
@@ -264,7 +264,7 @@ export const properties: Property[] = [
       "1 year free property management included",
       "$15K rebate — limited time offer",
       "Land registration: End 2025",
-      "Built by Noble Home Builders (iCIRT 5-star certified)",
+      "Built to high standards (iCIRT 5-star certified)",
     ],
     inspectionTimes: ["Contact us"],
     agent: {
@@ -410,12 +410,12 @@ export const properties: Property[] = [
     category: "buy",
     type: "house",
     description:
-      "Smart Hills LOT 6 — Cheriton 205MG House & Land Package in Box Hill (39 Mason Rd). Total package price $1,191,000 (House: $551,000, Land: $640,000). Features 5 spacious bedrooms, 3.5 luxury bathrooms, and double garage with extended living and high rental return. Gold Inclusion Package by Noble Home Builders (iCIRT 5-star certified). Includes $15K Rebate for a limited time, with land registration set for End 2025.",
+      "Smart Hills LOT 6 — Cheriton 205MG House & Land Package in Box Hill (39 Mason Rd). Total package price $1,191,000 (House: $551,000, Land: $640,000). Features 5 spacious bedrooms, 3.5 luxury bathrooms, and double garage with extended living and high rental return. Gold Inclusion Package (iCIRT 5-star certified). Includes $15K Rebate for a limited time, with land registration set for End 2025.",
     features: [
       "House Design: Cheriton 205MG (House 205m² / Land 228m²)",
       "$15K Rebate (Limited Time Offer)",
       "5 Bedrooms | 3.5 Bathrooms | 2 Car Garage",
-      "Gold Inclusion Highlights by Noble Home Builders (iCIRT 5-Star Certified)",
+      "Gold Inclusion Highlights (iCIRT 5-Star Certified)",
       "BASIX 7 Star Energy Efficiency Upgrade",
       "2600mm High Ceiling to Ground Floor",
       "Actron Air Zoned & Ducted Air Conditioning",
@@ -724,11 +724,11 @@ export const properties: Property[] = [
     category: "buy",
     type: "house",
     description:
-      "Oran Park LOT 28 — Aurora 172 House & Land Package (18 Drover St & 28 Madden St). Total package price $1,141,990 (House: $452,000, Land: $689,990). Features 4 bedrooms, 2.5 bathrooms, study nook, media room, and single lock-up garage. Gold Inclusion Package by Noble Home Builders (iCIRT 5-star certified). Land registration date Q2 2026.",
+      "Oran Park LOT 28 — Aurora 172 House & Land Package (18 Drover St & 28 Madden St). Total package price $1,141,990 (House: $452,000, Land: $689,990). Features 4 bedrooms, 2.5 bathrooms, study nook, media room, and single lock-up garage. Gold Inclusion Package (iCIRT 5-star certified). Land registration date Q2 2026.",
     features: [
       "House Design: Aurora 172 (House 172m² / Land 275m²)",
       "4 Bedrooms | 2.5 Bathrooms | 1 Lock-up Garage",
-      "Gold Inclusion Highlights by Noble Home Builders (iCIRT 5-Star Certified)",
+      "Gold Inclusion Highlights (iCIRT 5-Star Certified)",
       "BASIX 7 Star Energy Efficiency Upgrade",
       "2600mm High Ceiling to Ground Floor",
       "Actron Air Zoned & Ducted Air Conditioning",
