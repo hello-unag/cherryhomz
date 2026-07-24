@@ -580,7 +580,7 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                     className={`relative w-full shrink-0 group/gallery overflow-hidden touch-pan-y cursor-pointer ${
                       images[currentImageIdx] === property.floorplan
                         ? 'bg-white'
-                        : 'aspect-[4/3] sm:aspect-[16/10] max-h-[460px] bg-slate-950/90 dark:bg-slate-900'
+                        : 'bg-black/5 dark:bg-slate-900/50'
                     }`}
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
@@ -596,7 +596,7 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.2 }}
-                        className={images[currentImageIdx] === property.floorplan ? 'w-full' : 'absolute inset-0 pointer-events-none'}
+                        className="w-full flex items-center justify-center"
                       >
                         {images[currentImageIdx] === property.floorplan ? (
                           // eslint-disable-next-line @next/next/no-img-element
@@ -607,15 +607,13 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                             className="w-full h-auto object-contain bg-white"
                           />
                         ) : (
-                          <Image
-                             src={images[currentImageIdx]}
-                             alt={`${property.title} - view ${currentImageIdx + 1}`}
-                             fill
-                             draggable={false}
-                             sizes="(max-width: 768px) 90vw, 60vw"
-                             quality={75}
-                             className="object-contain"
-                           />
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={images[currentImageIdx]}
+                            alt={`${property.title} - view ${currentImageIdx + 1}`}
+                            draggable={false}
+                            className="w-full h-auto max-h-[65vh] object-contain block mx-auto rounded-t-2xl sm:rounded-2xl"
+                          />
                         )}
                       </motion.div>
                     </AnimatePresence>
