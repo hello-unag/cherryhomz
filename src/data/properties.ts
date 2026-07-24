@@ -246,9 +246,9 @@ export const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 2,
     carSpaces: 1,
-    image: "/images/prop-box-hill.jpg",
+    image: "/images/prop-box-hill.jpg?v=2",
     gallery: [
-      "/images/prop-box-hill.jpg",
+      "/images/prop-box-hill.jpg?v=2",
     ],
     category: "buy",
     type: "house",
