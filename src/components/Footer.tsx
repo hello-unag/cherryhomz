@@ -178,7 +178,7 @@ const Footer: FC = () => {
 
             {/* Social icons */}
             <div className="mt-6 flex items-center gap-3 justify-center lg:justify-start">
-              <SocialButton href="" label="Facebook">
+              <SocialButton href="https://www.facebook.com/profile.php?id=61588756441447" label="Facebook">
                 <FacebookIcon />
               </SocialButton>
               <SocialButton href="" label="Instagram">
