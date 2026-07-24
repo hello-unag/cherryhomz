@@ -141,7 +141,7 @@ const contactItems: ContactItem[] = [
   },
   {
     icon: <MapPinIcon />,
-    text: 'Level 8, 300 George Street, Sydney NSW 2000',
+    text: 'Serving all Sydney suburbs',
   },
 ];
 

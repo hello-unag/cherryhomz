@@ -367,7 +367,7 @@ export default function ContactPageContent() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    Level 8, 300 George Street,<br />Sydney NSW 2000
+                    Serving all Sydney suburbs
                   </p>
                   <p className="flex items-center gap-2.5">
                     <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth={1.8} className="h-4.5 w-4.5 shrink-0">
