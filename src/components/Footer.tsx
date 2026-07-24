@@ -141,7 +141,7 @@ const contactItems: ContactItem[] = [
   },
   {
     icon: <MapPinIcon />,
-    text: 'Level 8, 300 George Street,\nSydney NSW 2000',
+    text: 'Level 8, 300 George Street, Sydney NSW 2000',
   },
 ];
 
@@ -154,7 +154,7 @@ const Footer: FC = () => {
 
   return (
     <footer className="w-full bg-accent-soft border-t border-[rgba(155,27,48,0.05)]" role="contentinfo">
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20 py-16">
         {/* ---- Top Section: Responsive Layout ---- */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8">
           
@@ -188,7 +188,7 @@ const Footer: FC = () => {
           </div>
 
           {/* Columns 2 & 3 – Links and Contact (Side-by-side) */}
-          <div className="grid grid-cols-[auto_1fr] sm:grid-cols-2 gap-8 sm:gap-16 lg:gap-20">
+          <div className="grid grid-cols-[auto_1fr] sm:grid-cols-2 gap-4 sm:gap-16 lg:gap-20">
             {/* Column 2 – Quick Links */}
             <FooterLinkColumn title="Quick Links" links={quickLinks} />
 
@@ -199,14 +199,10 @@ const Footer: FC = () => {
               </h3>
               <ul className="space-y-4">
                 {contactItems.map((item) => {
-                  const isEmail = item.text.includes('@');
-                  const isAddress = item.text.includes('\n');
                   const inner = (
-                    <span className="flex items-start gap-3 text-xs sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
+                    <span className="flex items-start gap-2 text-[11px] sm:text-sm text-muted transition-colors duration-300 group-hover:text-primary">
                       {item.icon}
-                      <span className={`${isEmail ? 'whitespace-nowrap' : ''} ${isAddress ? 'whitespace-pre-line leading-relaxed' : 'break-all'}`}>
-                        {item.text}
-                      </span>
+                      <span className="whitespace-nowrap">{item.text}</span>
                     </span>
                   );
 
