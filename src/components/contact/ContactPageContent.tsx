@@ -92,11 +92,11 @@ export default function ContactPageContent() {
       setIsSubmitting(true);
       setSubmitError(null);
 
-      // Read access key from environment variable
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      // Read access key from environment variable (with hardcoded fallback)
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '98137720-2b69-4976-a66a-77c5d28b7d5d';
 
       if (!accessKey) {
-        console.warn("Web3Forms access key is not configured in .env. Falling back to local submission simulation.");
+        console.warn("Web3Forms access key is not configured.");
         setTimeout(() => {
           setIsSubmitting(false);
           setSubmitted(true);
