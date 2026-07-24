@@ -181,7 +181,7 @@ const Footer: FC = () => {
               <SocialButton href="https://www.facebook.com/profile.php?id=61588756441447" label="Facebook">
                 <FacebookIcon />
               </SocialButton>
-              <SocialButton href="" label="Instagram">
+              <SocialButton href="https://www.instagram.com/cherry_homz/" label="Instagram">
                 <InstagramIcon />
               </SocialButton>
             </div>
