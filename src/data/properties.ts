@@ -439,7 +439,7 @@ export const properties: Property[] = [
   {
     id: "prop-marsden-park-5bed",
     title: "Brand-New 5 Bedroom Home, Marsden Park",
-    address: "Marsden Park",
+    address: "Lot 36",
     suburb: "Marsden Park",
     state: "NSW",
     price: 1249000,
@@ -478,7 +478,7 @@ export const properties: Property[] = [
   {
     id: "prop-austral",
     title: "Brand-New Luxury Home, Austral",
-    address: "Austral",
+    address: "Lot 10",
     suburb: "Austral",
     state: "NSW",
     price: 1350000,
@@ -593,7 +593,7 @@ export const properties: Property[] = [
   {
     id: "prop-menangle-park",
     title: "Menangle Park House & Land Package",
-    address: "Menangle Park",
+    address: "Lot 6",
     suburb: "Menangle Park",
     state: "NSW",
     price: 1200000,
