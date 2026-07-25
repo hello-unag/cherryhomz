@@ -163,7 +163,7 @@ export default function HeroSection() {
       {/* ============================================================ */}
       {/*  Background images with crossfade                            */}
       {/* ============================================================ */}
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="sync" initial={false}>
         <motion.div
           key={slide.src}
           variants={imageVariants}
@@ -228,7 +228,7 @@ export default function HeroSection() {
       {/*  Left-aligned text overlay                                   */}
       {/* ============================================================ */}
       <div className="absolute inset-0 z-20 flex items-end justify-start pl-6 md:pl-12 lg:pl-20 pr-6 pb-32 lg:pb-24">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={current}
             variants={textContainerVariants}
