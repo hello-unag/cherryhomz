@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import PageHero from '@/components/PageHero';
 import ContactPageContent from '@/components/contact/ContactPageContent';
@@ -22,7 +23,13 @@ export default function ContactPage() {
         image="/images/hero-contact.png?v=2"
       />
 
-      <ContactPageContent />
+      <Suspense fallback={
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+        </div>
+      }>
+        <ContactPageContent />
+      </Suspense>
 
       <Footer />
     </main>

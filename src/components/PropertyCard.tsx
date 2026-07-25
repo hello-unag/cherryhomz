@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence, type PanInfo } from 'framer-motion';
 import PropertyMap from '@/components/PropertyMap';
 import { Property } from '@/data/properties';
@@ -16,6 +17,7 @@ interface PropertyCardProps {
 const SWIPE_THRESHOLD = 40;
 
 export default function PropertyCard({ property, showcaseOnly = false }: PropertyCardProps) {
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -972,6 +974,10 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                           </div>
                         ) : (
                           <button 
+                            onClick={() => {
+                              setIsModalOpen(false);
+                              router.push(`/contact?property=${encodeURIComponent(property.title)}`);
+                            }}
                             className="mt-auto w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl transition-colors duration-300 shadow-lg shadow-primary/30"
                           >
                             Enquire Now

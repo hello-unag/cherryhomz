@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 import PropertyMap from '@/components/PropertyMap';
 
 /* ------------------------------------------------------------------ */
@@ -73,6 +74,18 @@ export default function ContactPageContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const searchParams = useSearchParams();
+  const initialProperty = searchParams.get('property');
+
+  useEffect(() => {
+    if (initialProperty) {
+      setForm((prev) => ({
+        ...prev,
+        message: `Hi Cherry Homz, I am interested in enquiring about the property: "${initialProperty}". Please contact me with more information.`,
+      }));
+    }
+  }, [initialProperty]);
 
   const update = (key: keyof FormState, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));
