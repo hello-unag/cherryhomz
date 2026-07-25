@@ -30,6 +30,67 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
   const didSwipeRef = useRef(false);
   const shareRef = useRef<HTMLDivElement>(null);
 
+  // Inline Enquiry Form States
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  const [enquiryName, setEnquiryName] = useState('');
+  const [enquiryEmail, setEnquiryEmail] = useState('');
+  const [enquiryPhone, setEnquiryPhone] = useState('');
+  const [enquiryMessage, setEnquiryMessage] = useState(
+    `Hi Cherry Homz, I am interested in enquiring about the property: "${property.title}". Please contact me with more information.`
+  );
+  const [enquirySubmitting, setEnquirySubmitting] = useState(false);
+  const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+  const [enquiryError, setEnquiryError] = useState<string | null>(null);
+  const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; phone?: string; message?: string }>({});
+
+  const handleEnquirySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const nextErrors: typeof formErrors = {};
+    if (!enquiryName.trim()) nextErrors.name = 'Please enter your name';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enquiryEmail)) nextErrors.email = 'Enter a valid email address';
+    if (!/^[\d\s+()-]{8,}$/.test(enquiryPhone)) nextErrors.phone = 'Enter a valid phone number';
+    if (enquiryMessage.trim().length < 10) nextErrors.message = 'Tell us a little more (10+ characters)';
+
+    setFormErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    setEnquirySubmitting(true);
+    setEnquiryError(null);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '98137720-2b69-4976-a66a-77c5d28b7d5d',
+          name: enquiryName,
+          email: enquiryEmail,
+          phone: enquiryPhone,
+          subject: `Property Enquiry: ${property.title}`,
+          message: enquiryMessage,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setEnquirySubmitted(true);
+        // Reset form fields
+        setEnquiryName('');
+        setEnquiryEmail('');
+        setEnquiryPhone('');
+      } else {
+        setEnquiryError(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setEnquiryError('Network error. Please check your connection and try again.');
+    } finally {
+      setEnquirySubmitting(false);
+    }
+  };
+
   // Close share dropdown when clicking outside
   useEffect(() => {
     if (!isShareOpen) return;
@@ -41,6 +102,22 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isShareOpen]);
+
+  // Reset form when modal closes
+  useEffect(() => {
+    if (!isModalOpen) {
+      setShowEnquiryForm(false);
+      setEnquirySubmitted(false);
+      setEnquiryError(null);
+      setFormErrors({});
+      setEnquiryName('');
+      setEnquiryEmail('');
+      setEnquiryPhone('');
+      setEnquiryMessage(
+        `Hi Cherry Homz, I am interested in enquiring about the property: "${property.title}". Please contact me with more information.`
+      );
+    }
+  }, [isModalOpen, property.title]);
 
   const images = property.gallery && property.gallery.length > 0 ? property.gallery : [property.image];
 
@@ -972,12 +1049,108 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                               </a>
                             </div>
                           </div>
+                        ) : showEnquiryForm ? (
+                          <div className="mt-auto border-t border-line pt-4 bg-slate-50 dark:bg-slate-900/40 p-4 rounded-2xl">
+                            <h4 className="text-sm font-bold text-ink mb-3 flex items-center justify-between">
+                              <span>Enquire about this property</span>
+                              <button 
+                                onClick={() => setShowEnquiryForm(false)}
+                                className="text-xs text-muted hover:text-primary font-semibold"
+                              >
+                                Cancel
+                              </button>
+                            </h4>
+                            
+                            {enquirySubmitted ? (
+                              <div className="text-center py-4 text-green-600 font-semibold flex flex-col items-center gap-2">
+                                <span className="text-2xl">🎉</span>
+                                <span>Thank you! Your enquiry has been sent.</span>
+                              </div>
+                            ) : (
+                              <form onSubmit={handleEnquirySubmit} className="space-y-3">
+                                <div>
+                                  <input 
+                                    type="text" 
+                                    placeholder="Your Name" 
+                                    value={enquiryName}
+                                    onChange={(e) => {
+                                      setEnquiryName(e.target.value);
+                                      setFormErrors(prev => ({ ...prev, name: undefined }));
+                                    }}
+                                    className={`w-full text-xs px-3 py-2 border rounded-lg outline-none ${formErrors.name ? 'border-red-500 bg-red-50/50' : 'border-line focus:border-primary'}`}
+                                  />
+                                  {formErrors.name && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.name}</p>}
+                                </div>
+
+                                <div>
+                                  <input 
+                                    type="email" 
+                                    placeholder="Email Address" 
+                                    value={enquiryEmail}
+                                    onChange={(e) => {
+                                      setEnquiryEmail(e.target.value);
+                                      setFormErrors(prev => ({ ...prev, email: undefined }));
+                                    }}
+                                    className={`w-full text-xs px-3 py-2 border rounded-lg outline-none ${formErrors.email ? 'border-red-500 bg-red-50/50' : 'border-line focus:border-primary'}`}
+                                  />
+                                  {formErrors.email && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.email}</p>}
+                                </div>
+
+                                <div>
+                                  <input 
+                                    type="tel" 
+                                    placeholder="Phone Number" 
+                                    value={enquiryPhone}
+                                    onChange={(e) => {
+                                      setEnquiryPhone(e.target.value);
+                                      setFormErrors(prev => ({ ...prev, phone: undefined }));
+                                    }}
+                                    className={`w-full text-xs px-3 py-2 border rounded-lg outline-none ${formErrors.phone ? 'border-red-500 bg-red-50/50' : 'border-line focus:border-primary'}`}
+                                  />
+                                  {formErrors.phone && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.phone}</p>}
+                                </div>
+
+                                <div>
+                                  <textarea 
+                                    rows={2}
+                                    placeholder="Your Message" 
+                                    value={enquiryMessage}
+                                    onChange={(e) => {
+                                      setEnquiryMessage(e.target.value);
+                                      setFormErrors(prev => ({ ...prev, message: undefined }));
+                                    }}
+                                    className={`w-full text-xs px-3 py-2 border rounded-lg outline-none resize-none ${formErrors.message ? 'border-red-500 bg-red-50/50' : 'border-line focus:border-primary'}`}
+                                  />
+                                  {formErrors.message && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.message}</p>}
+                                </div>
+
+                                {enquiryError && (
+                                  <p className="text-[10px] text-red-500 font-semibold">{enquiryError}</p>
+                                )}
+
+                                <button
+                                  type="submit"
+                                  disabled={enquirySubmitting}
+                                  className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-2.5 rounded-xl transition-all duration-300 shadow-md shadow-primary/20 text-xs flex items-center justify-center gap-1.5"
+                                >
+                                  {enquirySubmitting ? (
+                                    <>
+                                      <svg className="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                                      </svg>
+                                      Sending...
+                                    </>
+                                  ) : (
+                                    'Send Enquiry'
+                                  )}
+                                </button>
+                              </form>
+                            )}
+                          </div>
                         ) : (
                           <button 
-                            onClick={() => {
-                              setIsModalOpen(false);
-                              router.push(`/contact?property=${encodeURIComponent(property.title)}`);
-                            }}
+                            onClick={() => setShowEnquiryForm(true)}
                             className="mt-auto w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl transition-colors duration-300 shadow-lg shadow-primary/30"
                           >
                             Enquire Now
