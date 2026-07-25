@@ -55,11 +55,6 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          sizes="any"
-        />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         {children}
