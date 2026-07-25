@@ -89,16 +89,35 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
 
   /* ---- Switch BACK to English ---- */
   const restoreEnglish = () => {
-    // Clear the googtrans cookie and reload
-    const clearCookie = (domain: string) => {
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
-    };
-    clearCookie(window.location.hostname);
-    clearCookie('.' + window.location.hostname);
-    document.cookie =
-      'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
-    setIsTranslated(false);
-    window.location.reload();
+    const select = document.querySelector(
+      '#google_translate_element select'
+    ) as HTMLSelectElement | null;
+
+    if (select && select.options.length > 0) {
+      // Index 0 is always the original 'Select Language' option which reverts the DOM
+      select.selectedIndex = 0;
+      select.dispatchEvent(new Event('change'));
+      setIsTranslated(false);
+    } else {
+      // Fallback: Clear the googtrans cookie and reload
+      const clearCookie = (domain: string) => {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+      };
+      
+      const host = window.location.hostname;
+      clearCookie(host);
+      clearCookie('.' + host);
+      
+      // Also try clearing for root domain if it's www
+      if (host.startsWith('www.')) {
+        clearCookie(host.substring(4));
+        clearCookie('.' + host.substring(4));
+      }
+      
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      setIsTranslated(false);
+      window.location.reload();
+    }
   };
 
   const handleClick = () => {
