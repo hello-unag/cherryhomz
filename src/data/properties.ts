@@ -71,6 +71,39 @@ export interface HeroSlide {
 
 export const properties: Property[] = [
   {
+    id: "prop-olympic-park-showcase",
+    title: "Luxury Architectural Tower — Sydney Olympic Park",
+    address: "Sydney Olympic Park NSW",
+    suburb: "Sydney Olympic Park",
+    state: "NSW",
+    price: 0,
+    priceLabel: "Showcase Only",
+    bedrooms: 2,
+    bathrooms: 2,
+    carSpaces: 1,
+    image: "/images/prop-olympic-park.jpg?v=1",
+    gallery: [
+      "/images/prop-olympic-park.jpg?v=1",
+    ],
+    category: "sold",
+    type: "apartment",
+    description:
+      "An architectural marvel located in the heart of Sydney Olympic Park, this ultra-modern high-rise apartment tower represents the pinnacle of contemporary urban living. Boasting a striking bronze glass facade, spacious private balconies, and exceptional district views, the tower stands as a landmark of design excellence. Residents enjoy world-class amenities, direct access to surrounding parks, and a vibrant dining and entertainment precinct at their doorstep.",
+    features: [
+      "Striking modern architectural tower with bronze glazing",
+      "Spacious private balconies with panoramic district skyline views",
+      "Open-plan living with floor-to-ceiling glass windows",
+      "Premium kitchens equipped with high-end integrated appliances",
+      "Luxury master suites with custom built-in wardrobe systems",
+      "Secure basement car parking and dedicated storage cage",
+      "Direct lift access and premium security intercom features",
+      "Moments from Sydney Olympic Park station and world-class sporting venues",
+    ],
+    coordinates: { lat: -33.8398, lng: 151.0694 },
+    isNew: false,
+    isFeatured: true,
+  },
+  {
     id: "prop-strathfield-showcase",
     title: "Luxury Modern Residence – Strathfield",
     address: "Strathfield NSW",
