@@ -180,6 +180,7 @@ export default function HeroSection() {
                 alt={slide.title}
                 fill
                 priority={current === 0}
+                fetchPriority={current === 0 ? "high" : "auto"}
                 className="object-cover hidden md:block"
                 sizes="100vw"
                 quality={80}
@@ -190,6 +191,7 @@ export default function HeroSection() {
                 alt={slide.title}
                 fill
                 priority={current === 0}
+                fetchPriority={current === 0 ? "high" : "auto"}
                 className="object-cover block md:hidden"
                 sizes="100vw"
                 quality={80}
@@ -201,6 +203,7 @@ export default function HeroSection() {
               alt={slide.title}
               fill
               priority={current === 0}
+              fetchPriority={current === 0 ? "high" : "auto"}
               className="object-cover"
               sizes="100vw"
               quality={80}
