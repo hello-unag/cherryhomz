@@ -10,8 +10,6 @@ export default function BuildShowcaseSection() {
     [
       'prop-strathfield-showcase',
       'prop-wahroonga-showcase',
-      'prop-box-hill-lot6',
-      'prop-marsden-park-5bed',
       'prop-austral',
       'prop-thornleigh-showcase',
     ].includes(p.id)
