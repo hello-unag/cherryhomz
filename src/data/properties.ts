@@ -198,7 +198,6 @@ export const properties: Property[] = [
     image: "/images/prop-thornleigh-facade.png?v=2",
     gallery: [
       "/images/prop-thornleigh-facade.png?v=2",
-      "/images/prop-thornleigh-sign.png?v=2",
       "/images/prop-thornleigh-void.png?v=2",
       "/images/prop-thornleigh-dining.png?v=2",
       "/images/prop-thornleigh-office.png?v=2",
