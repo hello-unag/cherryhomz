@@ -220,13 +220,23 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
       )
       .join('');
 
+    const displayPdfAddress = property.address.toLowerCase().includes(property.suburb.toLowerCase())
+      ? property.address
+      : `${property.address}, ${property.suburb} ${property.state}${property.postcode ? ' ' + property.postcode : ''}`;
+
+    const displayPdfPrice = property.price === 0 || !property.price
+      ? 'Contact Agent'
+      : formatPrice(property.price);
+
+    const displayPdfArea = property.area ?? 'N/A';
+
     const html = `
 <!DOCTYPE html>
 <html lang="${isChinese ? 'zh-CN' : 'en-AU'}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${property.address}, ${property.suburb} — Cherry Homz</title>
+  <title>${displayPdfAddress} — Cherry Homz</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Segoe UI',Arial,sans-serif; color:#1a1a1a; background:#fff; padding:44px; max-width:820px; margin:0 auto; }
@@ -294,11 +304,11 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
 
   <div class="section">
     <div class="prop-title">${pdfTitle}</div>
-    <div class="prop-address">📍 ${property.address}, ${property.suburb} ${property.state}${property.postcode ? ' ' + property.postcode : ''}</div>
-    <div class="price">${formatPrice(property.price)}</div>
+    <div class="prop-address">📍 ${displayPdfAddress}</div>
+    <div class="price">${displayPdfPrice}</div>
     <div class="stats">
       ${bedsHTML}
-      <div class="stat"><strong>${property.area}</strong><span>m²</span></div>
+      <div class="stat"><strong>${displayPdfArea}</strong><span>m²</span></div>
     </div>
   </div>
 
