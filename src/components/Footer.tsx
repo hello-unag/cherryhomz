@@ -2,6 +2,7 @@
 
 import React, { type FC } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -104,25 +105,37 @@ const SocialButton: FC<{ href: string; label: string; children: React.ReactNode 
   </a>
 );
 
-const FooterLinkColumn: FC<{ title: string; links: FooterLink[] }> = ({ title, links }) => (
-  <div className="text-left">
-    <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
-      {title}
-    </h3>
-    <ul className="space-y-3">
-      {links.map((link) => (
-        <li key={link.label}>
-          <Link
-            href={link.href}
-            className="text-sm text-muted transition-colors duration-300 hover:text-primary"
-          >
-            {link.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const FooterLinkColumn: FC<{ title: string; links: FooterLink[] }> = ({ title, links }) => {
+  const pathname = usePathname();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="text-left">
+      <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-ink">
+        {title}
+      </h3>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-sm text-muted transition-colors duration-300 hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 /* ------------------------------------------------------------------ */
 /*  Contact items                                                      */
@@ -151,6 +164,7 @@ const contactItems: ContactItem[] = [
 
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
 
   return (
     <footer className="w-full bg-accent-soft border-t border-[rgba(155,27,48,0.05)]" role="contentinfo">
@@ -160,7 +174,16 @@ const Footer: FC = () => {
           
           {/* Column 1 – Brand */}
           <div className="flex flex-col items-center text-center lg:max-w-sm shrink-0">
-            <Link href="/" className="inline-block">
+            <Link
+              href="/"
+              onClick={(e) => {
+                if (pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+              className="inline-block"
+            >
               <span className="text-2xl font-bold tracking-tight text-primary">
                 CHERRY HOMZ
               </span>

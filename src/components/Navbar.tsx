@@ -78,7 +78,16 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex h-[70px] max-w-[1440px] items-center justify-between pl-2 pr-6 md:pl-4 md:pr-12 lg:pl-6 lg:pr-20">
           {/* ---- Logo ---- */}
-          <Link href="/" className="flex flex-col items-center gap-0 select-none">
+          <Link
+            href="/"
+            onClick={(e) => {
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            className="flex flex-col items-center gap-0 select-none"
+          >
             <span className="text-xl font-extrabold tracking-tight md:text-2xl" style={{ color: 'var(--primary)' }}>
               CHERRY HOMZ
             </span>
@@ -102,6 +111,12 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
+                      onClick={(e) => {
+                        if (pathname === link.href) {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
                       className={`relative inline-flex items-center justify-center rounded-xl px-4 py-2 text-[15px] font-bold transition-colors duration-200 ${
                         active ? 'text-[var(--primary)]' : 'text-[var(--ink)] hover:text-[var(--primary)]'
                       }`}
@@ -241,7 +256,13 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={link.href}
-                          onClick={() => setMobileOpen(false)}
+                          onClick={(e) => {
+                            setMobileOpen(false);
+                            if (pathname === link.href) {
+                              e.preventDefault();
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                          }}
                           className="flex items-center gap-3 rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors duration-200"
                           style={{
                             color: active ? '#9B1B30' : '#2C2C2C',
