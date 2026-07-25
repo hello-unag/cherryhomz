@@ -70,6 +70,8 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
       select.value = 'zh-CN';
       select.dispatchEvent(new Event('change'));
       setIsTranslated(true);
+    } else {
+      console.warn('Google Translate is not ready yet or is blocked by an ad-blocker.');
     }
   };
 
@@ -103,7 +105,6 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
 
         <motion.button
           onClick={handleClick}
-          disabled={!isReady}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.93 }}
           initial={{ opacity: 0, y: 10 }}
@@ -113,7 +114,7 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
           className={`
             flex items-center gap-2 rounded-full shadow-lg px-5 py-3 md:px-8 md:py-4
             font-bold text-xs md:text-base transition-colors duration-200
-            disabled:opacity-40 disabled:cursor-wait shrink-0 border border-white/20
+            shrink-0 border border-white/20
             ${isTranslated
               ? 'bg-white border-2 border-[#9B1B30] text-[#9B1B30] hover:bg-[#9B1B30] hover:text-white'
               : 'bg-[#9B1B30] text-white hover:bg-[#7a1526]'
@@ -176,7 +177,6 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
           onClick={handleClick}
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
-          disabled={!isReady}
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.93 }}
           initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,6 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
           className={`
             flex items-center gap-2 rounded-full shadow-xl px-4 py-3
             font-bold text-sm transition-colors duration-200
-            disabled:opacity-40 disabled:cursor-wait
             ${isTranslated
               ? 'bg-white border-2 border-[#9B1B30] text-[#9B1B30] hover:bg-[#9B1B30] hover:text-white'
               : 'bg-[#9B1B30] text-white hover:bg-[#7a1526]'
