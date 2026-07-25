@@ -66,8 +66,6 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
     }, 3500);
 
     return () => {
-      const s = document.getElementById('goog-suppress');
-      if (s) s.remove();
       clearInterval(checkInterval);
       clearTimeout(loadTimeout);
     };
@@ -75,12 +73,10 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
 
   /* ---- Switch TO Chinese ---- */
   const translateToChinese = () => {
-    const select = document.querySelector(
-      '#google_translate_element select'
-    ) as HTMLSelectElement | null;
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
     if (select) {
       select.value = 'zh-CN';
-      select.dispatchEvent(new Event('change'));
+      select.dispatchEvent(new Event('change', { bubbles: true }));
       setIsTranslated(true);
     } else {
       console.warn('Google Translate is not ready yet or is blocked by an ad-blocker.');
@@ -89,32 +85,48 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
 
   /* ---- Switch BACK to English ---- */
   const restoreEnglish = () => {
-    const select = document.querySelector(
-      '#google_translate_element select'
-    ) as HTMLSelectElement | null;
-
+    // 1. Try reverting via the select element (instant, no reload)
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
     if (select && select.options.length > 0) {
-      // Index 0 is always the original 'Select Language' option which reverts the DOM
-      select.selectedIndex = 0;
-      select.dispatchEvent(new Event('change'));
-      setIsTranslated(false);
-    } else {
-      // Fallback: Clear the googtrans cookie and reload
-      const clearCookie = (domain: string) => {
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
-      };
-      
-      const host = window.location.hostname;
-      clearCookie(host);
-      clearCookie('.' + host);
-      
-      // Also try clearing for root domain if it's www
-      if (host.startsWith('www.')) {
-        clearCookie(host.substring(4));
-        clearCookie('.' + host.substring(4));
+      select.value = ''; // Google Translate uses an empty string for the original language
+      if (select.selectedIndex !== 0) {
+        select.selectedIndex = 0;
       }
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      setIsTranslated(false);
       
+      // Also try to click the iframe restore button just in case
+      try {
+        const iframe = document.querySelector('.goog-te-banner-frame') as HTMLIFrameElement;
+        if (iframe) {
+          const innerDoc = iframe.contentDocument || iframe.contentWindow?.document;
+          const buttons = innerDoc?.getElementsByTagName('button');
+          if (buttons) {
+            for (let i = 0; i < buttons.length; i++) {
+              if (buttons[i].id.includes('restore')) {
+                buttons[i].click();
+              }
+            }
+          }
+        }
+      } catch (e) {
+        // Ignore CORS errors if iframe is blocked
+      }
+    } else {
+      // 2. Fallback: Brute-force clear the googtrans cookie and reload
+      const host = window.location.hostname;
+      const domains = [host, `.${host}`];
+      if (host.startsWith('www.')) {
+        const root = host.substring(4);
+        domains.push(root, `.${root}`);
+      }
+
+      domains.forEach((d) => {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${d}`;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/zh-CN; domain=${d}`;
+      });
       document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      
       setIsTranslated(false);
       window.location.reload();
     }
