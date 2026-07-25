@@ -20,7 +20,7 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-[#9B1B30]/30">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#2C2C2C] font-sans selection:bg-[#9B1B30]/20">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
       <div className="flex min-h-screen flex-col lg:pl-64 transition-all duration-300">

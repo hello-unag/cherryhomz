@@ -32,22 +32,22 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-zinc-950 px-4">
-      <div className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-8">
+    <div className="min-h-screen flex items-center justify-center bg-[#FAFAF8] px-4">
+      <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white flex items-center justify-center gap-2">
-            Cherry Homz <span className="text-2xl">🍒</span>
+          <h1 className="text-3xl font-black text-[#9B1B30] flex items-center justify-center gap-2">
+            CHERRY HOMZ <span className="text-2xl">🍒</span>
           </h1>
-          <p className="text-zinc-400 mt-2">Admin Portal</p>
+          <p className="text-sm font-bold tracking-widest uppercase text-blue-600 mt-1">Admin Portal</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-1" htmlFor="username">Username</label>
+            <label className="block text-sm font-bold text-slate-700 mb-1.5" htmlFor="username">Username</label>
             <input
               id="username"
               type="text"
-              className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#9B1B30] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#9B1B30] focus:border-transparent transition-all text-sm font-medium"
               placeholder="Enter your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -55,11 +55,11 @@ export default function AdminLogin() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-1" htmlFor="password">Password</label>
+            <label className="block text-sm font-bold text-slate-700 mb-1.5" htmlFor="password">Password</label>
             <input
               id="password"
               type="password"
-              className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#9B1B30] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#9B1B30] focus:border-transparent transition-all text-sm font-medium"
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -68,7 +68,7 @@ export default function AdminLogin() {
           </div>
 
           {error && (
-            <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-[#9B1B30] text-xs font-bold">
               {error}
             </div>
           )}
@@ -76,7 +76,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 px-4 bg-[#9B1B30] hover:bg-[#801627] text-white rounded-lg font-medium transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 px-4 bg-[#9B1B30] hover:bg-[#801627] text-white rounded-xl font-bold transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-[#9B1B30]/20"
           >
             {isLoading ? (
               <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

@@ -57,46 +57,49 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full bg-zinc-950 border-r border-zinc-800 w-64 z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-white border-r border-slate-200 w-64 z-50 transform transition-transform duration-300 ease-in-out shadow-sm ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="p-6">
-          <Link href="/admin" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-white">Cherry Homz</span>
-            <span className="text-xl">🍒</span>
+        <div className="p-6 border-b border-slate-100">
+          <Link href="/admin" className="flex flex-col items-start gap-0 select-none">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xl font-black tracking-tight text-[#9B1B30]">CHERRY HOMZ</span>
+              <span className="text-lg">🍒</span>
+            </div>
+            <span className="text-[10px] font-bold tracking-widest uppercase text-blue-600">Admin Portal</span>
           </Link>
         </div>
 
-        <nav className="mt-6 px-4 space-y-2 flex-1 overflow-y-auto">
+        <nav className="mt-4 px-3 space-y-1.5 flex-1 overflow-y-auto">
           {/* Dashboard */}
           <Link
             href="/admin"
-            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-colors font-semibold text-sm ${
               pathname === '/admin'
-                ? 'bg-[#9B1B30]/10 text-white border-l-2 border-[#9B1B30]'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-900 border-l-2 border-transparent'
+                ? 'bg-[#9B1B30]/10 text-[#9B1B30] border-l-4 border-[#9B1B30]'
+                : 'text-slate-600 hover:text-[#9B1B30] hover:bg-slate-50 border-l-4 border-transparent'
             }`}
           >
             {navItems[0].icon}
-            <span className="font-medium">Dashboard</span>
+            <span>Dashboard</span>
           </Link>
 
           {/* Properties Dropdown */}
-          <div className="pt-2">
+          <div>
             <button
               onClick={() => setIsPropertiesOpen(!isPropertiesOpen)}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors ${
+              className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl transition-colors font-semibold text-sm ${
                 pathname.startsWith('/admin/properties')
-                  ? 'text-white'
-                  : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
+                  ? 'text-[#9B1B30] bg-[#9B1B30]/5'
+                  : 'text-slate-600 hover:text-[#9B1B30] hover:bg-slate-50'
               }`}
             >
               <div className="flex items-center gap-3">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                <span className="font-medium">Properties</span>
+                <span>Properties</span>
               </div>
               <svg
                 className={`w-4 h-4 transition-transform ${isPropertiesOpen ? 'rotate-180' : ''}`}
@@ -115,8 +118,8 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block py-2 text-sm transition-colors ${
-                        isActive ? 'text-white font-medium' : 'text-zinc-500 hover:text-zinc-300'
+                      className={`block py-2 text-sm transition-colors rounded-lg px-2 ${
+                        isActive ? 'text-[#9B1B30] font-bold bg-[#9B1B30]/10' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
                       }`}
                     >
                       {item.name}
@@ -134,14 +137,14 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-colors font-semibold text-sm ${
                   isActive
-                    ? 'bg-[#9B1B30]/10 text-white border-l-2 border-[#9B1B30]'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-900 border-l-2 border-transparent'
+                    ? 'bg-[#9B1B30]/10 text-[#9B1B30] border-l-4 border-[#9B1B30]'
+                    : 'text-slate-600 hover:text-[#9B1B30] hover:bg-slate-50 border-l-4 border-transparent'
                 }`}
               >
                 {item.icon}
-                <span className="font-medium">{item.name}</span>
+                <span>{item.name}</span>
               </Link>
             );
           })}
