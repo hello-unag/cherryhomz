@@ -474,12 +474,16 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
           <span className="truncate">
-            {showcaseOnly ? `${property.suburb}, ${property.state}` : `${property.address}, ${property.suburb} ${property.state}`}
+            {showcaseOnly 
+              ? `${property.suburb}, ${property.state}` 
+              : property.address.toLowerCase().includes(property.suburb.toLowerCase())
+                ? property.address
+                : `${property.address}, ${property.suburb} ${property.state}`}
           </span>
         </div>
 
         {/* Price */}
-        {!showcaseOnly && (
+        {!showcaseOnly && property.priceLabel && property.priceLabel !== "Showcase Only" && (
           <div className="flex items-baseline gap-1.5 mb-3">
             <span className="text-xl font-black tracking-tight" style={{ color: 'var(--primary)' }}>
               {property.priceLabel}
@@ -668,7 +672,11 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                       </svg>
-                      {showcaseOnly ? `${property.suburb}, ${property.state}` : `${property.address}, ${property.suburb} ${property.state}`}
+                      {showcaseOnly 
+                        ? `${property.suburb}, ${property.state}` 
+                        : property.address.toLowerCase().includes(property.suburb.toLowerCase())
+                          ? property.address
+                          : `${property.address}, ${property.suburb} ${property.state}`}
                     </div>
 
                     {!showcaseOnly && (
