@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
     // Allow versioned local image URLs like /images/foo.png?v=2 (cache busting)
     localPatterns: [{ pathname: "/images/**" }],
