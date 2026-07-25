@@ -41,7 +41,7 @@ const slides: Slide[] = [
   },
 ];
 
-const AUTOPLAY_MS = 5_000;
+const AUTOPLAY_MS = 8_000;
 
 /* ------------------------------------------------------------------ */
 /*  Framer-motion variants                                             */
@@ -183,7 +183,7 @@ export default function HeroSection() {
                 fetchPriority={current === 0 ? "high" : "auto"}
                 className="object-cover hidden md:block"
                 sizes="100vw"
-                quality={80}
+                quality={65}
               />
               {/* Mobile Image */}
               <Image
@@ -194,7 +194,7 @@ export default function HeroSection() {
                 fetchPriority={current === 0 ? "high" : "auto"}
                 className="object-cover block md:hidden"
                 sizes="100vw"
-                quality={80}
+                quality={65}
               />
             </>
           ) : (
@@ -206,7 +206,7 @@ export default function HeroSection() {
               fetchPriority={current === 0 ? "high" : "auto"}
               className="object-cover"
               sizes="100vw"
-              quality={80}
+              quality={65}
             />
           )}
         </motion.div>

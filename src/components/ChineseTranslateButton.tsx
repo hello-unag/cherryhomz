@@ -46,18 +46,30 @@ export default function ChineseTranslateButton({ inline = false }: ChineseTransl
       setIsReady(true);
     };
 
-    if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.src =
-        '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const checkInterval = setInterval(() => {
+      if (document.querySelector('.goog-te-combo') || document.querySelector('#google_translate_element select')) {
+        setIsReady(true);
+        clearInterval(checkInterval);
+      }
+    }, 500);
+
+    // Defer the heavy Google Translate script to avoid blocking the main thread
+    const loadTimeout = setTimeout(() => {
+      if (!document.getElementById('google-translate-script')) {
+        const script = document.createElement('script');
+        script.id = 'google-translate-script';
+        script.src =
+          '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }, 3500);
 
     return () => {
       const s = document.getElementById('goog-suppress');
       if (s) s.remove();
+      clearInterval(checkInterval);
+      clearTimeout(loadTimeout);
     };
   }, []);
 
