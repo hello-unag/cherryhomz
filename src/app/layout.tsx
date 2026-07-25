@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import MobileTabBar from "@/components/MobileTabBar";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 // Runs synchronously during HTML parsing (before first paint) so the saved
 // theme is applied without a flash of the default palette on reload.
@@ -66,7 +65,6 @@ export default function RootLayout({
         {children}
 
         <MobileTabBar />
-        <ThemeSwitcher />
       </body>
     </html>
   );

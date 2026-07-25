@@ -18,6 +18,14 @@ export default function SettingsPage() {
           </div>
           <h3 className="text-lg font-medium text-white mb-2">Coming Soon</h3>
           <p className="text-zinc-400">Settings management will be available after Cloudflare R2 integration.</p>
+          <div className="mt-6 inline-flex flex-col text-sm text-zinc-500 bg-zinc-950/50 p-4 rounded-lg border border-zinc-800 text-left w-full">
+            <span className="font-medium text-zinc-300 mb-2">Planned Features:</span>
+            <ul className="list-disc pl-4 space-y-1">
+              <li>Company & SEO Defaults</li>
+              <li>Google Maps & Analytics</li>
+              <li>Website Theme & Colors</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
