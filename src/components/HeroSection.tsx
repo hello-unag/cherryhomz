@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import ChineseTranslateButton from './ChineseTranslateButton';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -296,9 +295,6 @@ export default function HeroSection() {
                     />
                   </svg>
                 </motion.a>
-
-                {/* Chinese translation button */}
-                <ChineseTranslateButton inline={true} />
               </motion.div>
             </motion.div>
           </motion.div>
