@@ -392,7 +392,7 @@ export const properties: Property[] = [
     suburb: "Box Hill",
     state: "NSW",
     price: 1191000,
-    priceLabel: "$1,191,000",
+    priceLabel: "Sold $1,191,000",
     bedrooms: 5,
     bathrooms: 3.5,
     carSpaces: 2,
@@ -405,10 +405,10 @@ export const properties: Property[] = [
       "/images/prop-box-hill-lot6-floorplan.png",
     ],
     floorplan: "/images/prop-box-hill-lot6-floorplan.png",
-    category: "buy",
+    category: "sold",
     type: "house",
     description:
-      "Smart Hills LOT 6 — Cheriton 205MG House & Land Package in Box Hill (39 Mason Rd). Total package price $1,191,000 (House: $551,000, Land: $640,000). Features 5 spacious bedrooms, 3.5 luxury bathrooms, and double garage with extended living and high rental return. Gold Inclusion Package (iCIRT 5-star certified). Includes $15K Rebate for a limited time, with land registration set for End 2025.",
+      "Recently sold — Smart Hills LOT 6 Cheriton 205MG House & Land Package in Box Hill (39 Mason Rd). Total package price $1,191,000 (House: $551,000, Land: $640,000). Features 5 spacious bedrooms, 3.5 luxury bathrooms, and double garage with extended living and high rental return. Gold Inclusion Package (iCIRT 5-star certified).",
     features: [
       "House Design: Cheriton 205MG (House 205m² / Land 228m²)",
       "$15K Rebate (Limited Time Offer)",
@@ -431,7 +431,7 @@ export const properties: Property[] = [
       email: "marcus@cherryhomz.com.au",
     },
     coordinates: { lat: -33.6761, lng: 150.8770 },
-    isNew: true,
+    isNew: false,
     isFeatured: true,
   },
   {
@@ -441,7 +441,7 @@ export const properties: Property[] = [
     suburb: "Marsden Park",
     state: "NSW",
     price: 1249000,
-    priceLabel: "$1,249,000",
+    priceLabel: "Sold $1,249,000",
     bedrooms: 5,
     bathrooms: 3,
     carSpaces: 1,
@@ -449,12 +449,12 @@ export const properties: Property[] = [
     gallery: [
       "/images/prop-buy-4th.jpg",
     ],
-    category: "buy",
+    category: "sold",
     type: "house",
     description:
-      "Brand-new and ready to move in! A stunning 5-bedroom, 3-bathroom residence in Marsden Park featuring modern architecture, premium brick & render facade, lock-up garage, open-plan living, and high-end finishes throughout.",
+      "Recently sold — a stunning 5-bedroom, 3-bathroom residence in Marsden Park featuring modern architecture, premium brick & render facade, lock-up garage, open-plan living, and high-end finishes throughout.",
     features: [
-      "Brand-New & Ready to Move In",
+      "Brand-New & Successfully Sold",
       "5 Bedrooms | 3 Bathrooms | 1 Lock-up Garage",
       "Located in thriving Marsden Park",
       "Contemporary double-storey design",
@@ -470,7 +470,7 @@ export const properties: Property[] = [
       email: "marcus@cherryhomz.com.au",
     },
     coordinates: { lat: -33.7069, lng: 150.8344 },
-    isNew: true,
+    isNew: false,
     isFeatured: true,
   },
   {
