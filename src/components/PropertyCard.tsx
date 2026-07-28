@@ -199,18 +199,20 @@ export default function PropertyCard({ property, showcaseOnly = false }: Propert
     }
   }, [property.id]);
 
-  const badgeColors = {
+  const badgeColors: Record<Property['category'], string> = {
     buy: 'bg-green-600',
     rent: 'bg-blue-600',
     sold: 'bg-primary',
     land: 'bg-amber-600',
+    build: 'bg-[#9B1B30]',
   };
 
-  const badgeLabels = {
+  const badgeLabels: Record<Property['category'], string> = {
     buy: 'FOR SALE',
     rent: 'FOR RENT',
     sold: 'SOLD',
     land: 'LAND',
+    build: 'BUILD SHOWCASE',
   };
 
   const shareUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}?property=${property.id}` : '';

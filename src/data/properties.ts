@@ -28,7 +28,7 @@ export interface Property {
     phone: string;
     email: string;
   };
-  category: "buy" | "rent" | "sold" | "land";
+  category: "buy" | "rent" | "sold" | "land" | "build";
   type: "house" | "apartment" | "townhouse" | "land";
   description: string;
   features: string[];
@@ -124,7 +124,7 @@ export const properties: Property[] = [
       "/images/prop-strathfield-pool.png?v=2",
       "/images/prop-strathfield-bedroom.png?v=2",
     ],
-    category: "buy",
+    category: "build",
     type: "house",
     description:
       "A masterpiece of contemporary architectural design, this high-end double-storey home in Strathfield showcases the absolute pinnacle of luxury living. The house features an impressive architectural facade characterized by bold vertical slats, clean geometric lines, and a warm under-eave glow. Inside, a dramatic double-height void living space creates an abundance of natural light and volumetric scale, featuring glass balustrades, floating hardwood stairs, and premium polished marble flooring overlooking the private swimming pool.",
@@ -165,7 +165,7 @@ export const properties: Property[] = [
       "/images/prop-wahroonga-cinema.png?v=2",
       "/images/prop-wahroonga-backyard.png?v=2",
     ],
-    category: "buy",
+    category: "build",
     type: "house",
     description:
       "Nestled in the leafy enclave of Wahroonga, this magnificent double-storey luxury residence is a showcase of grand scale and contemporary design. Specially constructed on a beautifully elevated block, the home welcomes you with an impressive stone-clad retaining wall, manicured gardens, and a grand entrance facade with warm feature lighting. Internally, the house exhibits a spectacular double-height formal lounge with dramatic high-set windows, brown leather sofas, and an elegant chandelier. The expansive open-plan rear family room flows seamlessly to a covered outdoor alfresco kitchen, while a private home theatre/cinema room with acoustic walls and a high-definition projector screen offers the ultimate entertainment space. Upstairs, a separate rumpus retreat with polished timber floorboards opens to an elevated balcony, alongside a lavish master bedroom suite and premium bathrooms featuring freestanding tubs and double vanities.",
@@ -207,7 +207,7 @@ export const properties: Property[] = [
       "/images/prop-thornleigh-patio-bbq.png?v=2",
       "/images/prop-thornleigh-bathroom.png?v=2",
     ],
-    category: "buy",
+    category: "build",
     type: "house",
     description:
       "Located at 30 Yaralla Crescent in Thornleigh, this newly completed custom double-storey home displays unmatched quality and design. An illuminated floating step path leads you past tropical gardens to a grand entry porch featuring a warm varnished timber ceiling and a beautiful grey textured brick facade. Inside, the home boasts a breathtaking step-down formal living room with a spectacular double-height ceiling, three golden mesh pendant lights, and a vibrant floor-to-ceiling abstract feature wall mural. The open-plan layout connects a spacious dining area and state-of-the-art kitchen to a semi-enclosed outdoor patio with a built-in BBQ kitchen, overlooking a grassy lawn and a resort-style swimming pool with blue LED lighting. Accommodations include large bedrooms with built-in robes and dedicated study desks, alongside luxury terrazzo-tiled bathrooms equipped with black-and-white marble vessel basins and backlit LED mirrors.",
